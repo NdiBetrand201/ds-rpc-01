@@ -44,7 +44,7 @@ class RAGService:
             self._ingest_data()
 
         # Initialize Groq LLM via LangChain
-        groq_api_key = os.getenv('GROQ_API_KEY', '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')
+        groq_api_key = os.getenv('GROQ_API_KEY')
         if not groq_api_key:
             logger.warning("GROQ_API_KEY not found. LLM responses will fall back to rule-based generation.")
             self.groq_model = None
