@@ -1,4 +1,3 @@
-
 import os
 import logging
 from typing import List, Dict, Any, Optional
@@ -44,7 +43,7 @@ class RAGService:
             self._ingest_data()
 
         # Initialize Groq LLM via LangChain
-        groq_api_key = os.getenv(GROQ_API_KEY)
+        groq_api_key = os.getenv('GROQ_API_KEY')
         if not groq_api_key:
             logger.warning("GROQ_API_KEY not found. LLM responses will fall back to rule-based generation.")
             self.groq_model = None
